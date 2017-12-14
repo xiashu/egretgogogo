@@ -1,0 +1,24 @@
+private createList():void
+ {
+                                                                
+    var scroller:eui.Scroller = new eui.Scroller();
+    scroller.width = 640;
+    scroller.height = 960;
+    scroller.bounces = false;
+                                                            
+    var items =[];
+    for(var i:number = 0 ; i < 100 ;i++) 
+    { 
+        items.push("内容"+i);
+    }
+                                                                      
+    var list:eui.List = new eui.List();
+    var layout =  new eui.VerticalLayout();
+    layout.gap =5;
+    list.layout = layout;
+    scroller.viewport = list;//设置要观察的list组件
+                                                            
+    list.itemRendererSkinName ="skins.ItemRendererSkin";
+    list.dataProvider = new eui.ArrayCollection(items);  
+    this.addChild(scroller);
+ }

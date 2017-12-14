@@ -1,0 +1,3 @@
+var btn: eui.ToggleSwitch = new eui.ToggleSwitch();
+btn.label = "ToggleSwitch";
+this.addChild(btn);

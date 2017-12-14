@@ -1,0 +1,3 @@
+var image:eui.Image = new eui.Image();
+image.source = "example_png";
+this.addChild(image);

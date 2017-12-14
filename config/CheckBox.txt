@@ -1,0 +1,3 @@
+var cbx = new eui.CheckBox();
+cbx.label = "CheckBox";
+this.addChild(cbx);

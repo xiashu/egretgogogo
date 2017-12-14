@@ -1,0 +1,81 @@
+<html>
+ <head>
+ 
+	<link rel="stylesheet" href="weui.min.css" />
+	<meta charset="utf-8" />
+	<script src="./webview.js">
+
+	</script>
+</head>
+<style>
+   html ,body, .container{
+		background-color: #f8f8f8;
+		height: 100%;	
+	}
+
+ 
+
+	.group{
+       margin-left: 4%;
+	}
+	.bottom{
+		height: 50px;
+	}
+</style>
+
+<body>
+	  <div class="container">
+		  <div class="weui-cells__title">常用</div> 
+		 <div class="group">
+            <button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="crateCode('TestCode')">创建代码</button>
+            <button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('SINGLE')">插入单例</button>
+			<button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('For1')">插入For</button>
+			<button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('For2')">插入2For</button>				
+		    <button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('CLASS')">创建Class</button>
+			<button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('DisplayObjectContainer')">创建容器</button>
+		 </div>
+		<div class="weui-cells__title">文本</div> 
+		 <div class="group">
+           	<button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('TextField')">插入文本</button>
+		 </div>
+		 <div class="weui-cells__title">绘图</div> 
+		 <div class="group">
+            <button class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('drawRect')">绘图矩形</button>
+            <button class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('drawCircle')">绘图圆形</button>
+		 </div>
+		<div class="weui-cells__title">龙骨</div> 
+		 <div class="group">
+           <button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('DrgonBone')">插入龙骨</button>	
+		 </div>
+         
+		<div class="weui-cells__title">动画</div> 
+		 <div class="group">
+             <button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('Tween')">插入Tween</button>
+		 </div>
+
+		 <div class="weui-cells__title">插入EUI</div> 
+		 <div class="group">
+            <button class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('List')">List</button> 
+			<button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('Button')">Button</button> 
+			<button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('Image')">Image</button>
+			<button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('RadioButton')">RadioButton</button>
+			<button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('HSlider')">HSlider</button> 
+			<button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('ToggleSwitch')">ToggleSwitch</button> 
+			<button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('CheckBox')">CheckBox</button> 
+			<button  class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('Label')">Label</button>               
+		 </div>
+         
+		 <div class="weui-cells__title">位图</div> 
+		 <div class="group">
+            <button class="weui-btn weui-btn_mini weui-btn_primary" onclick="inserCode('Bitmap')">插入Bitmap</button>     
+		 </div>
+		  <div class="bottom">
+
+		  </div>
+   
+	  </div>
+</body>
+
+</html>
+
+ 

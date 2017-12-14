@@ -1,0 +1,5 @@
+var shape:egret.Shape = new egret.Shape();
+shape.graphics.beginFill(0x00ff00);
+shape.graphics.drawRect(0,0,200,200);
+shape.graphics.endFill();
+this.addChild(shape);

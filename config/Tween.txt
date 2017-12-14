@@ -1,0 +1,1 @@
+egret.Tween.get().to({x:20},500,egret.Ease.bounceIn);

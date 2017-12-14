@@ -1,0 +1,60 @@
+{
+	"name": "egretgogogo",
+	"displayName": "Egret GOGOGO",
+	"description": "An Extension tool For Egret Wing.",
+	"version": "1.0.0",
+	"publisher": "egret",
+	"engines": {
+		"wing": "^3.0.4"
+	},
+	"categories": [
+		"Other"
+	],
+	"icon": "images/icon.svg",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/xiashu/egretgogogo.git"
+	},
+	"license": "MIT",
+	"activationEvents": [
+		"onCommand:extension.testcode",
+		"*"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.testcode",
+				"title": "Test Code"
+			}
+		],
+		"views": [
+			{
+				"type": "utility",
+				"icon": "web/statics/icon.svg",
+				"title": "EgretGOGOGO",
+				"url": "./web/index.html",
+				"id": "codeid2"
+			}
+		],
+		"snippets": [
+		{
+			"language": "typescript",
+			"path": "./snippets/typescript.json"
+		}
+	  ]
+	},
+	"scripts": {
+        "wing:prepublish": "node ./node_modules/egretwing/bin/compile",
+		"compile": "node ./node_modules/egretwing/bin/compile -watch -p ./src",
+		"postinstall": "node ./node_modules/egretwing/bin/install"
+	},
+	"devDependencies": {
+		"egretwing": "^3.0.4",
+		"typescript": "^1.7.5"
+	},
+	"dependencies": {
+	 
+	}
+ 
+}

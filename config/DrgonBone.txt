@@ -1,0 +1,18 @@
+private playDB():void
+{
+                
+    var dragonbonesData = RES.getRes( "Demon_10_json" );
+    var textureData = RES.getRes( "texture_json" );
+    var texture = RES.getRes( "texture_png" );
+    var dragonbonesFactory:dragonBones.EgretFactory = new dragonBones.EgretFactory();
+    dragonbonesFactory.addDragonBonesData(dragonBones.DataParser.parseDragonBonesData(dragonbonesData));
+    dragonbonesFactory.addTextureAtlas(new dragonBones.EgretTextureAtlas(texture,textureData));   
+    var armature: dragonBones.EgretArmatureDisplay = dragonbonesFactory.buildArmatureDisplay("armatureName")
+    this.addChild(armature);
+    armature.x=300;
+    armature.y= 400;
+    armature.scaleX = 0.5;  
+    armature.scaleY = 0.5; 
+    armature.animation.gotoAndPlayByTime("dead",0,200);
+           
+}

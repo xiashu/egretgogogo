@@ -1,0 +1,8 @@
+var button:eui.Button = new eui.Button();
+button.label = "Test";
+button.width = 200;
+button.height = 150;
+this.addChild(button);
+button.addEventListener(egret.TouchEvent.TOUCH_TAP,(event:TouchEvent)=>{
+  
+},this);

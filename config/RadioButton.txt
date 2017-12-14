@@ -1,0 +1,20 @@
+var radioGroup: eui.RadioButtonGroup = new eui.RadioButtonGroup();
+var data = [{label:"小米",value:100},{label:"三星",value:200},
+            {label:"苹果",value:300},{label:"华为",value:400}
+                                    
+        ]
+for(var i:number = 0 ; i< data.length;i++)
+{
+        var rbtn: eui.RadioButton = new eui.RadioButton();
+        rbtn.label = data[i].label;
+        rbtn.value = data[i].value;
+        rbtn.group = radioGroup;
+        rbtn.y = 50+i*50;
+        this.addChild(rbtn);
+}
+                                
+radioGroup.addEventListener(eui.UIEvent.CHANGE, (event)=>{
+                                        
+    console.log(radioGroup.selection.label,radioGroup.selectedValue,radioGroup.selection.selected);
+                            
+}, this);

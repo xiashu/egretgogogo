@@ -1,0 +1,3 @@
+var label:eui.Label = new eui.Label();
+label.text = "eui";
+this.addChild(label);

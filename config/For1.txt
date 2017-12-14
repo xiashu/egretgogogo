@@ -1,0 +1,4 @@
+for(var i:number = 0;i<array.length;i++)
+{
+
+}

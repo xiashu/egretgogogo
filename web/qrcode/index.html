@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+	 <meta charset="utf-8">
+	 <!--<script src="./jquery-2.2.3.min.js" type="text/javascript"></script>-->
+	 <script src="./qrcode.js" type="text/javascript"></script>
+	 <!--<script src="./jquery.qrcode.js" type="text/javascript"></script>-->
+	 <link href="./bootstrap.css" type="text/css" rel="stylesheet" />
+  </head>
+
+	<style>
+		.monaca-shell {
+			margin: 8px;
+		}
+		
+		.monaco-shell .vs-dark {
+			background-color: #ffffff;
+		}
+		
+	 
+		.center div button{
+			margin:5px;
+		}
+		
+		body {		 
+			background-color: #f8f8f8;
+		}
+ 	    .container{
+			 width: 100%;
+			 height: 400px;
+			 background-color: #f8f8f8;
+			 position: relative;
+		 }
+		
+		.container h2 , p{
+			text-align: center;
+		}
+		
+		#qrcodeView{
+			display: inline-block;
+			 
+		}
+		
+		#selectView {			 
+			display: inline;
+			position: absolute;
+			top: 110px;
+			right:2%;			 
+		}
+	 
+		
+	</style>
+     <script src="./webview.js">
+
+	</script> 
+<body>
+	<div class='container'>	 
+			<h2 style="margin-bottom:20px;">二维码地址测试</h2>            
+			<div class="input-group">			
+				<input id="contentTxt" type="text" list="browsers" class="form-control" placeholder="Http..." name="link"/>
+			
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button" onclick="createQrcode();">生成二维码</button>
+				</span>
+			</div> 
+			
+ 		    <br>       
+			<div id="qrcodeView"></div>	
+			<div id="selectView">
+		 
+			</div>	 
+			<br>
+			<br>
+			<p style="clear:both"><button type="button" class="btn  btn-danger" onclick="closeWebView();">关闭窗口</button>
+			  <button type="button" class="btn  btn-danger" onclick="clearAll();">清理缓存</button>
+			</p>		 
+ 
+	<script type="text/javascript">
+	
+ 
+	 window.onload = function () {
+		 var linkValue = localStorage.getItem('wing_cookie');
+		 if(linkValue!=null)
+		 {
+			  document.getElementById('contentTxt').value = linkValue;
+			  qrcode(linkValue);
+		 }	
+		
+		 var allData = localStorage.getItem('wing_link');
+	 
+		 if(allData !=null)
+		 {
+			 allData = JSON.parse(localStorage.getItem('wing_link'));
+			 var curHtml="<select style='width:100px' onchange='onSelect(this)'>";
+			 if(allData.length >=2)
+			 {
+				for(var i = 0 ;i<allData.length;i++)
+				{
+					curHtml+= "<option value="+allData[i]+">"+allData[i]+ "</option>"+'\n';				 
+				}
+				curHtml+="</select>";
+				document.getElementById('selectView').innerHTML = curHtml;				 
+			 }
+		
+		 }	
+	 }
+	 
+	 function onSelect(obj)
+	 {
+		 
+		  document.getElementById('contentTxt').value = obj.value;
+		  document.getElementById('qrcodeView').innerHTML = ""; 
+		  qrcode(obj.value);
+	 }
+	 
+	 function clearAll()
+	 {
+		localStorage.removeItem('wing_cookie');
+		localStorage.removeItem('wing_link');
+		alert("清理完毕");	
+	 }
+	
+	 //生成二维码效果
+	 function createQrcode()
+	 {		   
+	     var link = document.getElementById('contentTxt').value;			 
+		 saveCookies(link);	
+		 document.getElementById('qrcodeView').innerHTML = ""; 
+		 qrcode(link);
+	 }
+	
+	 //保存cookies 类型
+	 function saveCookies(link)
+	 {		
+	    localStorage.setItem('wing_cookie', link);
+		if(localStorage.getItem('wing_link') == null)
+		{   
+			var array = [link];
+			localStorage.setItem('wing_link',JSON.stringify(array));
+		}
+		else
+		{
+			 var array  = JSON.parse(localStorage.getItem('wing_link'));
+			 if(array.indexOf(link)==-1)
+			 {
+				 array.push(link);
+				localStorage.setItem('wing_link',JSON.stringify(array));
+			}
+		}
+	 }
+	
+	
+	
+	   function qrcode(text)
+	   {
+			// create the qrcode itself			
+		var options	=  {
+			render		: "canvas",
+			width		: 200,
+			height		: 200,
+			typeNumber	: -1,
+			text:text,
+			correctLevel	: QRErrorCorrectLevel.H,
+                        background      : "#ffffff",
+                        foreground      : "#000000"
+		};
+			
+			
+			var qrcode	= new QRCode(options.typeNumber, options.correctLevel);
+			qrcode.addData(options.text);
+			qrcode.make();
+
+			// create canvas element
+			var canvas	= document.createElement('canvas');
+			canvas.width	= options.width;
+			canvas.height	= options.height;
+			var ctx		= canvas.getContext('2d');
+
+			// compute tileW/tileH based on options.width/options.height
+			var tileW	= options.width  / qrcode.getModuleCount();
+			var tileH	= options.height / qrcode.getModuleCount();
+
+			// draw in the canvas
+			for( var row = 0; row < qrcode.getModuleCount(); row++ ){
+				for( var col = 0; col < qrcode.getModuleCount(); col++ ){
+					ctx.fillStyle = qrcode.isDark(row, col) ? options.foreground : options.background;
+					var w = (Math.ceil((col+1)*tileW) - Math.floor(col*tileW));
+					var h = (Math.ceil((row+1)*tileW) - Math.floor(row*tileW));
+					ctx.fillRect(Math.round(col*tileW),Math.round(row*tileH), w, h);  
+				}	
+			}
+			// return just built canvas
+		 document.getElementById('qrcodeView').appendChild(canvas);	
+		}
+	
+	
+	</script>
+</body>
+</html>

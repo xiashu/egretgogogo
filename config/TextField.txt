@@ -1,0 +1,4 @@
+var txt:egret.TextField = new egret.TextField();
+this.addChild(txt);
+txt.text = "txt";
+

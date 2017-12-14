@@ -1,0 +1,5 @@
+var  bitmap:egret.Bitmap = new egret.Bitmap();
+var texture:egret.Texture = RES.getRes(name);
+bitmap.texture = texture;
+
+ 

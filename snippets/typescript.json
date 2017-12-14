@@ -1,0 +1,137 @@
+{
+    "fori": {
+        "prefix": "fori",
+        "body": [
+            "for(var i:number = 0;i<${1:array}.length;i++){\n\n\n}"
+        ],
+        "description": "生成fori循环"
+    },
+    "forij": {
+        "prefix": "forij",
+        "body": [
+           "for(var i:number = 0;i<${1:array}.length;i++){\n for(var j:number = 0;j<${2:array}.length;j++){\n $3\n}"
+        ],
+        "description": "生成fori-j循环"
+    },
+     "button": {
+        "prefix": "button",
+        "body": [
+            "var button:eui.Button = new eui.Button();",
+            "$1"
+        ],
+        "description": "生成Button"
+    },
+   "button-click": {
+        "prefix": "button-click",
+        "body": [
+                "var button:eui.Button = new eui.Button();",
+                "button.label = 'Test';",
+                "button.width = 200;",
+                "button.height = 150;",
+                "this.addChild(button);",
+                "button.addEventListener(egret.TouchEvent.TOUCH_TAP,(event:TouchEvent)=>{",
+                "\n$1",
+                "},this);" 
+        ],
+        "description": "生成Button点击"
+    },
+  
+    "textField": {
+        "prefix": "textfield",
+        "body": [
+            "var textfield:egret.TextField = new egret.TextField();",
+            "this.addChild(textfield);",
+            "$1"
+        ],
+        "description": "生成TextField"
+    },  
+    "bitmap": {
+        "prefix": "bitmap",
+        "body": [
+            "var  bitmap:egret.Bitmap = new egret.Bitmap();",
+             "this.addChild(bitmap);",
+            "$1"
+        ],
+        "description": "生成Bitmap"
+    },  
+    "image": {
+        "prefix": "image",
+        "body": [
+            "var  image:eui.Image = new eui.Image();",
+            "image.source = 'example_png';",
+            "this.addChild(image);",
+            "$1"
+        ],
+        "description": "生成image"
+    },  
+    
+    "radioButton": {
+        "prefix": "radioButton",
+        "body": [
+            "var  radioButton: eui.RadioButton = new eui.RadioButton();",
+             "this.addChild(radioButton);",
+            "$1"
+        ],
+        "description": "生成RadioButton"
+    },
+    "label": {
+        "prefix": "label",
+        "body": [
+            "var  label:eui.Label = new eui.Label();",
+            "this.addChild(label);",
+            "$1"
+        ],
+        "description": "生成label"
+    },
+    "checkbox": {
+        "prefix": "checkbox",
+        "body": [
+            "var  checkbox:eui.CheckBox = new eui.CheckBox();",
+             "this.addChild(checkbox);",
+            "$1"
+        ],
+        "description": "生成checkbox"
+    },
+    "hslider": {
+        "prefix": "hslider",
+        "body": [
+            "var  hslider:eui.Hslider = new eui.Hslider();",
+            "this.addChild(hslider);",            
+            "$1"
+        ],
+        "description": "生成hslider"
+    },
+    "draw_circle": {
+        "prefix": "draw_circle",
+        "body": [
+            "var shape:egret.Shape = new egret.Shape();",
+            "shape.graphics.beginFill(0xff0000);",
+            "shape.graphics.drawCircle(0,0,200);",
+            "shape.graphics.endFill();",
+            "this.addChild(shape);",
+            "$1"
+        ],
+        "description": "生成圆形"
+    },
+    "draw_rect": {
+        "prefix": "draw_rect",
+        "body": [
+            "var shape:egret.Shape = new egret.Shape();",
+            "shape.graphics.beginFill(0x00ff00);",
+            "shape.graphics.drawRect(0,0,200,200);",
+            "shape.graphics.endFill();",
+            "this.addChild(shape);",
+            "$1"
+        ],
+        "description": "生成矩形"
+    },
+    "tween": {
+        "prefix": "tween",
+        "body": [
+            "egret.Tween.get($1).to({x:20},500,egret.Ease.bounceIn);",
+            "$1"
+        ],
+        "description": "生成Tween"
+    }
+
+}

@@ -1,0 +1,57 @@
+
+.code-map .icon {
+	background-image: url('symbol-sprite.svg');
+	background-repeat: no-repeat;
+	height: 16px;
+	width: 16px;
+	position: absolute;
+	top:2px;
+	left:0px;
+}
+
+.code-map .icon					{ background-position: -361px -3px; }
+.code-map .icon.method,
+.code-map .icon.function,
+.code-map .icon.constructor			{ background-position: 2px -3px; }
+.code-map .icon.field,
+.code-map .icon.variable 			{ background-position: -18px -3px; }
+.code-map .icon.class 				{ background-position: -41px -3px; }
+.code-map .icon.interface 			{ background-position: -61px -4px; }
+.code-map .icon.module 				{ background-position: -79px -4px; }
+.code-map .icon.property 			{ background-position: -100px -3px; }
+.code-map .icon.unit		 			{ background-position: -120px -4px; }
+.code-map .icon.value,
+.code-map .icon.enum		 			{ background-position: -140px -3px; }
+.code-map .icon.keyword	 			{ background-position: -161px -2px; }
+.code-map .icon.snippet		 		{ background-position: -181px -4px; }
+.code-map .icon.text		 			{ background-position: -201px -2px; }
+.code-map .icon.color		 		{ background-position: -221px -4px; }
+.code-map .icon.file		 			{ background-position: -260px -2px; }
+.code-map .icon.reference	 		{ background-position: -281px -4px; }
+
+.code-map .icon.customcolor {
+	background-image: none;
+}
+
+
+.vs-dark .code-map .icon					{ background-position: -361px -23px; }
+.vs-dark .code-map .icon.method,
+.vs-dark .code-map .icon.function,
+.vs-dark .code-map .icon.constructor			{ background-position: 2px -23px; }
+.vs-dark .code-map .icon.field,
+.vs-dark .code-map .icon.variable 			{ background-position: -18px -23px; }
+.vs-dark .code-map .icon.class 				{ background-position: -41px -23px; }
+.vs-dark .code-map .icon.interface 			{ background-position: -61px -24px; }
+.vs-dark .code-map .icon.module 				{ background-position: -79px -24px; }
+.vs-dark .code-map .icon.property 			{ background-position: -100px -23px; }
+.vs-dark .code-map .icon.unit		 			{ background-position: -120px -24px; }
+.vs-dark .code-map .icon.value,
+.vs-dark .code-map .icon.enum		 			{ background-position: -140px -23px; }
+.vs-dark .code-map .icon.keyword	 			{ background-position: -161px -22px; }
+.vs-dark .code-map .icon.snippet		 		{ background-position: -181px -23px; }
+.vs-dark .code-map .icon.text		 			{ background-position: -201px -22px; }
+.vs-dark .code-map .icon.color		 		{ background-position: -221px -24px; }
+.vs-dark .code-map .icon.file		 			{ background-position: -260px -22px; }
+.vs-dark .code-map .icon.reference	 		{ background-position: -281px -24px; }
+
+

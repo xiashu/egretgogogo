@@ -1,0 +1,6 @@
+var hSlider: eui.HSlider = new eui.HSlider();
+hSlider.width = 200;
+hSlider.minimum = 0; 
+hSlider.maximum = 100; 
+hSlider.value = 10;
+this.addChild(hSlider);

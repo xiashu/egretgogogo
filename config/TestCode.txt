@@ -1,0 +1,96 @@
+class TestCode extends egret.DisplayObjectContainer{
+	public constructor() {
+		super();
+		this.createButton();
+	}
+   
+   private static test:TestCode;
+
+   public static init():TestCode
+   {
+	   if(this.test == null)
+	   {
+		   this.test = new TestCode();
+	   }
+
+	   return this.test;
+   }
+
+	private createButton():void
+	{
+		for(var i:number=0;i<6;i++)
+		{
+            var button:TButton = new TButton("Button"+i);
+		    this.addChild(button);
+			button.x = button.width*i+i*10;
+			button.y = 100;
+			button.addEventListener(egret.TouchEvent.TOUCH_TAP,this["test"+(i+1)],this);
+		}
+	}
+
+   	private test1():void
+	{
+		 
+
+	}
+
+    private test2():void
+	{
+		 
+      
+
+	}
+
+	private test3():void
+	{
+		 
+      
+
+	}
+
+     private test4():void
+	{
+		 
+      
+
+	}
+
+	private test5():void
+	{
+		 
+      
+
+	}
+	
+	private test6():void
+	{
+		 
+  
+	}
+ 
+     
+
+}
+
+
+class TButton extends egret.Sprite{
+    public constructor(label,w=130,h=60) {
+		super();
+		this.init(label,w,h);
+	}
+
+	private init(label,w,h):void
+	{  
+		var text:egret.TextField = new egret.TextField();
+		this.addChild(text);
+		text.text = label;
+		text.x = w -10;
+		text.y = h-10;
+		this.graphics.beginFill(0xff0000);
+		this.graphics.drawRect(0,0,w,h);
+		this.graphics.endFill();
+		
+	}
+  
+
+}
